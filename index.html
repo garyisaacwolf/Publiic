@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tycho Protocol</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/TychoLogo_blackStroke.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            margin: 1.5rem 0 1rem 0;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 { font-size: 1.8rem; }
+        h3 { font-size: 1.3rem; }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Grid Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: 65% 35%;
+                gap: 3rem;
+            }
+        }
+
+        /* Main Content Column */
+        .main-content {
+            order: 2;
+        }
+
+        @media (min-width: 768px) {
+            .main-content {
+                order: 1;
+            }
+        }
+
+        /* Sidebar Column */
+        .sidebar {
+            order: 1;
+        }
+
+        @media (min-width: 768px) {
+            .sidebar {
+                order: 2;
+            }
+        }
+
+        /* Content Blocks */
+        .content-block {
+            margin-bottom: 2rem;
+        }
+
+        /* Terminal Style Block */
+        .terminal-block {
+            background: #2d2d2d;
+            color: #d4d4d4;
+            font-family: 'Courier New', monospace;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .terminal-block h1, .terminal-block h2, .terminal-block h3 {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            margin: 0 0 1rem 0;
+            color: #d4d4d4;
+        }
+
+        .terminal-block p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 0.8rem;
+        }
+
+        .terminal-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .terminal-block strong,
+        .terminal-block strong a {
+            color: #4fc3f7;
+            font-weight: normal;
+        }
+
+        .terminal-block a {
+            color: #4fc3f7;
+            text-decoration: underline;
+        }
+
+        .terminal-block strong a {
+            color: #4fc3f7;
+            text-decoration: underline;
+        }
+
+        .terminal-block a:hover {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Standard Block */
+        .standard-block {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .standard-block h1, .standard-block h2, .standard-block h3 {
+            font-size: 1.1rem;
+            margin-top: 0;
+        }
+
+        /* Regular Link Styling */
+        a {
+            color: #000;
+            text-decoration: underline;
+            transition: font-weight 0.2s ease;
+        }
+
+        a:hover {
+            font-weight: bold;
+        }
+
+        /* List Styling */
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Header Styling */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+        }
+
+        .logo-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="assets/TychoLogo_blackStroke.svg" alt="Tycho Protocol" width="48" height="48">
+                <span class="logo-text">Tycho Protocol</span>
+            </div>
+            <nav>
+                <!-- Navigation will be added when additional pages exist -->
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- TITLE START -->
+        <h1>Scaling Trust In Research Data</h1>
+        <!-- TITLE END -->
+
+        <div class="content-grid">
+            <!-- Main Content Column -->
+            <main class="main-content">
+                <!-- MAIN CONTENT START -->
+                <p>The increase in data from sensors and edge devices has exposed existing trust frameworks as obsolete. Our research focuses on open, low level protocol primitives that can support trust operations at scale. Our aim is catalyze development of domain specific applications that can guarantee the integrity of observations at the physical-digital border.</p>
+                <h2 id="data-fraud-and-fumbling">Data Fraud and Fumbling</h2>
+                <p>Scientific progress rests upon trust in observations. But traditional methods of maintaining trust through institutional supervision are failing at scale. Researchers face increasing challenges from both data fumbling and data fraud in a context of extremely complex data pipelines and untraceable AI operations.</p>
+                <ul>
+                <li>Non-conforming or untrustworthy timestamps interfere with alignment.</li>
+                <li>Human error cannot be traced back to its original source.</li>
+                <li>Sophisticated AI-assisted data fraud causes epistemic pollution.</li>
+                </ul>
+                <h2 id="upstream-downstream">Upstream/ Downstream</h2>
+                <p>Where data is very valuable — for instance, in clinical research trials for new drugs, or in managing medical images — human experts define data trust workflows and manage recovery and forensics. But in many domains, including data from IoT sensors, data assurance processes are complex, confusing, and difficult to update and implement. Everybody does their own thing, to the extent they can afford it.</p>
+                <p>Our research asks the question: What is the minimal amount of additional data that can be added to a record at the moment of its collection that will securely tie it to the time the observation was made and the instrument that recorded it? If we define a protocol that does this work at minimum computational cost, it will then be easier to automate trust assurance higher in the stack.</p>
+                <h2 id="basic-questions">Basic Questions</h2>
+                <p>A protocol that could do the job we’ve defined for it would have to answer the following questions:</p>
+                <ul>
+                <li>What instrument made the observations?</li>
+                <li>What time series do they belong to?</li>
+                <li>Who controls access to the instrument and time series?</li>
+                <li>When were the observations made?</li>
+                <li>Is the time series complete and uncorrupted?</li>
+                </ul>
+                <h2 id="cryptographic-commitments">Cryptographic commitments</h2>
+                <p>Our approach uses an interlocking set of cryptographic commitments.</p>
+                <ul>
+                <li>Temporal anchoring</li>
+                <li>Instrument identity</li>
+                <li>Time series sequentiality</li>
+                <li>Immutability</li>
+                <li>Custody</li>
+                </ul>
+                <p>We take advantage of decades of work that have make basic cryptographic techniques a standard part of the software development toolkit. The hard part has been developing a representation of the observational process that is both sufficiently formal to support automation and complete enough to be useful across many domains of research practice.</p>
+                <h2 id="temporal-density">Temporal Density</h2>
+                <p>To give you a sense of this difficulty: in our exploration of research workflows we’ve seen that real world “temporal density” of records ranges across sixteen orders of magnitude. That is, from every few years in longitudinal health study to something like 100,000,000 observations per second at the Large Hadron Collider. We’ve enjoyed taking on the challenge of designing a system that is plausible across the full range. The actual limits on performance is something we are currently investigating.</p>
+                <h2 id="theory-of-change">Theory of Change</h2>
+                <p>Our theory of change is simple: if the protocol works, it will prove its worth quickly by catching errors in ordinary research life. We hope to have something early collaborators can test soon. If you’d like to try it, please <a href="mailto:gary@article-27.org?subject=Tycho%20Protocol%20Collaboration">get in touch</a>.</p>
+                <!-- MAIN CONTENT END -->
+            </main>
+
+            <!-- Sidebar Column -->
+            <aside class="sidebar">
+                <!-- SIDEBAR CONTENT START -->
+                <div class="terminal-block">
+                    <h1 id="authors">Authors</h1>
+                    <p><strong><a href="https://antephase.com">Gary Isaac Wolf</a></strong><br><a href="https://antephase.com/thomas-blomseth-christiansen/">Thomas Blomseth Christiansen</a><br><a href="https://oaklab.org/">Jakob Eg Larsen</a></p>
+                </div>
+
+                <div class="standard-block">
+                    <h1 id="this-week">This Week</h1>
+                    <p><a href="mailto:gary@article-27.org?subject=Tycho%20Protocol%20Feedback">Internal testing</a></p>
+                </div>
+
+                <div class="standard-block">
+                    <h1 id="subscribe-for-updates">Subscribe for Updates</h1>
+                    <p><strong>RSS Feed</strong>: <a href="https://tblomseth.github.io/tychodocs/feed.xml">Subscribe to updates</a></p>
+                    <p><strong>Email via RSS</strong>: Use <a href="https://blogtrottr.com">Blogtrottr</a> or <a href="https://follow.it">Follow.it</a> to receive RSS updates via email</p>
+                </div>
+
+
+                <!-- SIDEBAR CONTENT END -->
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

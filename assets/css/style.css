@@ -1,0 +1,480 @@
+/* Tycho Protocol Website - Enhanced Styling Implementation
+   Professional design system with Ink & Switch inspiration
+   Implements: Design tokens, two-column layout, enhanced typography */
+
+/* ==========================================
+   DESIGN TOKENS (Foundation)
+   ========================================== */
+
+:root {
+  /* Typography Tokens */
+  --font-primary: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: 'Merriweather', Georgia, serif;
+  --font-mono: 'Monaco', 'Menlo', monospace;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+
+  /* Font Weights */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  --leading-loose: 2.0;
+
+  /* Color Tokens */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+
+  /* Semantic Color Tokens */
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-gray-700);
+  --color-text-muted: var(--color-gray-500);
+  --color-text-subtle: var(--color-gray-400);
+  --color-border-light: var(--color-gray-200);
+  --color-border: var(--color-gray-300);
+  --color-border-strong: var(--color-gray-400);
+  --color-background: var(--color-white);
+  --color-background-subtle: var(--color-gray-50);
+
+  /* Spacing Tokens */
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.25rem;    /* 20px */
+  --space-6: 1.5rem;     /* 24px */
+  --space-8: 2rem;       /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+
+  /* Container Tokens */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+}
+
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================
+   LAYOUT SYSTEM
+   ========================================== */
+
+.container {
+  max-width: var(--container-md);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* Large Screen Layout */
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: var(--container-lg);
+    margin: 0 auto;
+    padding: 0 var(--space-8);
+  }
+}
+
+/* ==========================================
+   TYPOGRAPHY SYSTEM
+   ========================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-6);
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  margin-top: var(--space-16);
+  margin-bottom: var(--space-6);
+  color: var(--color-text-primary);
+}
+
+h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-medium);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-4);
+}
+
+p {
+  margin-bottom: var(--space-6);
+  color: var(--color-text-secondary);
+  max-width: 65ch; /* Optimal reading length */
+}
+
+/* ==========================================
+   HEADER COMPONENT
+   ========================================== */
+
+header {
+  border-bottom: 1px solid var(--color-border-light);
+  padding: var(--space-8) 0;
+  margin-bottom: var(--space-16);
+  background-color: var(--color-background);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.logo img {
+  width: 56px;
+  height: 56px;
+  transition: transform var(--transition-fast);
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  font-family: var(--font-primary);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* ==========================================
+   CONTENT SECTIONS (Semantic Selectors)
+   ========================================== */
+
+section {
+  margin-bottom: var(--space-12);
+}
+
+/* Hero section (first section) */
+section:first-of-type {
+  margin-bottom: var(--space-24);
+}
+
+/* Hero description (first paragraph in first section) */
+section:first-of-type p:first-of-type {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-6);
+  line-height: var(--leading-relaxed);
+  max-width: 70ch;
+}
+
+/* ==========================================
+   LISTS
+   ========================================== */
+
+ul {
+  margin-left: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+li {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+li::marker {
+  color: var(--color-text-muted);
+}
+
+/* ==========================================
+   TEAM SECTION (Semantic Selectors)
+   ========================================== */
+
+/* Team section (assuming it's the 6th section based on content order) */
+section:nth-of-type(6) {
+  /* Team-specific styles if needed */
+}
+
+/* Team member paragraphs */
+section:nth-of-type(6) p {
+  margin-bottom: var(--space-5);
+}
+
+/* Strong text in team section (names) */
+section:nth-of-type(6) strong {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+}
+
+/* Links in team section */
+section:nth-of-type(6) a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  margin-left: var(--space-2);
+  font-size: var(--text-sm);
+  transition: color var(--transition-fast);
+}
+
+section:nth-of-type(6) a:hover {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+}
+
+/* ==========================================
+   CALL TO ACTION (Semantic Selectors)
+   ========================================== */
+
+/* Theory of Change section (assuming 5th section) - contains CTA */
+section:nth-of-type(5) {
+  /* CTA section styles if needed */
+}
+
+/* Button elements anywhere in the document */
+button {
+  background: none;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  margin: var(--space-6) 0;
+}
+
+button:hover {
+  color: var(--color-gray-600);
+  border-color: var(--color-gray-600);
+}
+
+button:focus {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+  margin-top: var(--space-24);
+  padding: var(--space-12) 0 var(--space-8);
+  border-top: 1px solid var(--color-border-light);
+  background-color: var(--color-background-subtle);
+}
+
+footer p {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-3);
+  text-align: left;
+}
+
+footer hr {
+  display: none; /* Remove redundant HR since we have border-top */
+}
+
+/* ==========================================
+   UTILITY STYLES (Semantic)
+   ========================================== */
+
+/* Placeholder text (italicized paragraphs) */
+p em {
+  color: var(--color-text-subtle);
+  font-style: italic;
+}
+
+/* Text in square brackets (placeholder indicators) */
+p:has([), p[contains(*, "[")] {
+  color: var(--color-text-subtle);
+  font-style: italic;
+}
+
+/* Alternative: target specific placeholder content */
+p:contains("Placeholder") {
+  color: var(--color-text-subtle);
+  font-style: italic;
+  padding: var(--space-4);
+  background-color: var(--color-background-subtle);
+  border-radius: var(--radius);
+  border: 1px dashed var(--color-border);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Mobile Optimizations */
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    margin-top: var(--space-12);
+  }
+
+  .logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-text {
+    font-size: var(--text-xl);
+  }
+
+  .hero-description {
+    font-size: var(--text-base);
+  }
+
+  section {
+    margin-bottom: var(--space-16);
+  }
+
+  .hero {
+    margin-bottom: var(--space-16);
+  }
+
+  .team-members {
+    gap: var(--space-4);
+  }
+}
+
+/* Tablet Adjustments */
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+  .container {
+    max-width: var(--container-md);
+  }
+}
+
+/* Large Screen Enhancements */
+@media screen and (min-width: 1024px) {
+  /* Future layout changes can be implemented here using semantic selectors */
+  /* Example: Two-column layout */
+  /*
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+  }
+  section:nth-of-type(1) { grid-column: 1 / -1; } // hero full width
+  section:nth-of-type(2) { grid-column: 1; }     // problem left
+  section:nth-of-type(3) { grid-column: 2; }     // approach right
+  */
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+  }
+
+  .subscribe-btn {
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+  }
+
+  header {
+    border-bottom: 1px solid black;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ========================================== */
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: var(--color-black);
+    --color-text-secondary: var(--color-black);
+  }
+}

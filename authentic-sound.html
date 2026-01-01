@@ -76,13 +76,22 @@
             margin: 1rem 0;
             white-space: pre;
         }
-        .footnote {
-            font-size: 0.9rem;
-            font-style: italic;
-            color: #666;
+        .footnotes {
+            font-size: 0.85rem;
+            color: #444;
             margin-top: 2rem;
             padding-top: 1rem;
             border-top: 1px solid #eee;
+        }
+        .footnotes p {
+            margin-bottom: 0.5rem;
+        }
+        sup a {
+            text-decoration: none;
+            color: #666;
+        }
+        sup a:hover {
+            color: #000;
         }
         footer {
             margin-top: 3rem;
@@ -105,34 +114,35 @@
 
     <div class="container">
         <h1>Authentic Sound: Why Audio Provenance Needs Hardware-Level Trust</h1>
-        <p class="date">December 29, 2025</p>
+        <p class="date">December 2025</p>
 
-        <h2>Background - Domain-Specific Clients</h2>
-        <p>The disturbance we're experiencing as AI tools infiltrate every dimension of work is so deep and so general that it's become hard, logically and psychologically, to pause long enough within the borders any particular domain and consider its specific requirements. Every concrete example immediately suggests a hundred analogs, and it seems almost foolish to pay close attention to, say, the complaints of teachers about AI assisted cheating, the worries of visual artists about robot competition, the contamination of research data by simulated observational records, and the disappearance of entry-level jobs. Aren't these all versions of the same problem?</p>
+        <h2>Background - Domain-Specific Tycho Clients</h2>
+        <p>The disturbance we're experiencing as AI tools infiltrate every dimension of work is so deep and so general that it's become hard, logically and psychologically, to pause long enough within the borders any particular domain and consider its specific requirements. Every concrete example immediately suggests a hundred analogs, and it seems almost foolish to pay close attention to, say, the complaints of teachers about AI assisted cheating, the worries of visual artists about robot competition, the contamination of research data by simulated observational records, and the deceptive hyperrealism of confabulated news reports. Aren't these are all versions of the same problem?</p>
 
-        <p>The answer is no. Although we have been developing a low-level, domain-agnostic approach to securing digital data provenance, its real-world usefulness depends entirely on the technical stack; and, as anyone who has worked with enterprise software knows, the specificity and heterogeneity of these stacks across various domains is almost impossible to overstate. Even where a Borg-like vendor—Salesforce, Microsoft, Google—offers a supposedly universal platform, actual deployments rely on endless customizations, extensions, and workarounds that defeat true uniformity.</p>
+        <p>The answer is no. Although we have been developing a low-level, domain-agnostic approach to securing digital data provenance, its real-world usefulness depends entirely on the technical stack; and the specificity and heterogeneity of these stacks across various domains is almost impossible to overstate.</p>
 
-        <p>So, although we envision securing trust in data across domains, we've had to come to terms with fact that Tycho clients will have endless variety. We've committed ourselves to creating some reference implementations in key domains, but we predict that these implementations will never be real products. Instead, they can be understood as documents, showing what Tycho can do and teaching developers (human and robot) how to think about the Tycho network.</p>
+        <p>So, although our research on the Tycho protocol focuses on securing trust in data generally we've had to come to terms with fact that Tycho clients will have endless variety. We've committed ourselves to creating some reference implementations in key domains, but these implementations are not <em>products.</em> Products require deeper commitments to domain-specific requirements. Instead, we think of our applications as <em>documents</em>, showing what Tycho can do and teaching developers (human and robot) how to use the network.</p>
 
         <p>This first post on domain-specific clients will focus on audio engineering, asking the question: How can we render audio files more trustworthy?</p>
 
         <h2>Audio Forensics</h2>
-        <p>Voice cloning has gone from a laboratory novelty to a cheap commodity within the last twenty-four months. This shift has operationalized what researchers call the Liar's Dividend: the ability for public figures to dismiss authentic, damaging recordings as "AI-generated," thereby eroding the objective value of audio provenance. (See: <a href="https://www.unesco.org/en/articles/deepfakes-and-crisis-knowing">Deepfakes and the Crisis of Knowing</a> | UNESCO, October 2025)</p>
+        <p>Voice cloning has gone from a laboratory novelty to a cheap commodity within the last three years. This sudden increase in capacity for simulation has some predictable effects. Not only is it easier to present fake stuff as real; but it's also easier to dismiss real stuff as fake.</p>
 
-        <h2>The Damage Is Already Done</h2>
-        <p><strong>Political Decoy and Suppression</strong>: In Slovakia's 2023 election, a deepfake audio clip of pro-EU candidate Michal Šimečka discussing election rigging surfaced 48 hours before polls opened—during a mandatory media silence period when he could not legally rebut it. Analysts believe it contributed to his pro-Russian opponent's victory. In 2024, thousands of New Hampshire voters received an AI-cloned call from "President Biden" telling them to skip the primary, leading to the first FCC ruling outlawing AI-generated voices in robocalls.</p>
+        <p>A few notorious cases provide common reference points: Michal Simecka's opposition campaign and Slovakia's pro-Russian government was undermined by fake audio of his voice supposedly discussing election fraud.<sup><a href="#fn1" id="ref1">1</a></sup> In 2024, thousands of New Hampshire voters received an AI-cloned call from "President Biden" telling them to skip the primary.<sup><a href="#fn2" id="ref2">2</a></sup> There are also regular reports of scam calls with impersonated identities: the jailed daughter, the stranded friend, etc.</p>
 
-        <p><strong>Corporate and Financial Fraud</strong>: A Hong Kong multinational lost $25 million in 2024 after an employee joined a video call with deepfaked executives. The audio authenticity was the psychological anchor that convinced him to wire the funds.</p>
+        <p>The lesson of these first experiences with high quality AI-assisted fraudulent sound is that a wised-up listener will wrap themselves in an impenetrable blanket of skepticism. But skepticism is a costly defense, as lack of trust in evidence leaves us to be governed by prior belief.<sup><a href="#fn3" id="ref3">3</a></sup></p>
 
-        <p><strong>Personal Security</strong>: Arizona mother Jennifer DeStefano received a call from what sounded exactly like her 15-year-old daughter crying and pleading for help, followed by a ransom demand. This "virtual kidnapping" tactic now uses as little as 3 seconds of social media audio to clone a relative's voice.</p>
+        <p>Of course, real tactical advantages don't need academic endorsements to become common, and the claim that "an AI faked my voice" has already been made numerous times by <a href="https://www.npr.org/2023/05/08/1174132413/people-are-trying-to-claim-real-videos-are-deepfakes-the-courts-are-not-amused">men in trouble</a>.</p>
 
-        <p><strong>Legal Precedents</strong>: Tennessee's 2024 ELVIS Act became the first US law to protect a person's voice as a property right, moving audio provenance into intellectual property litigation.</p>
+        <p>There are also cultural costs associated with attribution failures. There is no current way to sort out attribution and reward for creative works used to train AI's, but whatever system evolves, disputes over provenance are inevitable. As long as there is no confidence in what was used for training, how consent was obtained, what portion of the work was used, and where the derivative products ended up, courts and artists will be helpless. Impoverishment of musicians and authors can hardly be seen as a barrier to progress. (It is more like a time-honored tradition.) But there are commercial interests that can't be so easily abused, and they are going to demand traceability. The Midjourney and MiniMax lawsuits premiered the legal template for Hollywood's defense of visual content; an audio sequel is expected in 2026.</p>
 
         <h2>Why Watermarking Falls Short</h2>
-        <p>Simple watermarking cannot solve this problem. It doesn't protect against upstream fakery—a synthetic recording can be watermarked too. It isn't anchored into real-world time, so backdating is trivial. And it doesn't guarantee the instrument: there's no proof the audio came from a specific, verified microphone rather than a text-to-speech engine.</p>
+        <p>Simple watermarking cannot solve this problem. C2PA credentials can attach provenance metadata to audio files, but these credentials represent trust in the signer, not trust in the audio itself. Deceptive recordings, robot-generated audio, and abusive ripoffs can carry credentials too.<sup><a href="#fn4" id="ref4">4</a></sup> ISRC codes identify recordings, and fingerprinting services like Shazam, YouTube Content ID, and Audible Magic can detect unauthorized copies—but only of works already in a database. A new recording has no reference point.</p>
 
-        <h2>Where in the Stack? Why It Matters</h2>
-        <p>To understand how Tycho could provide useful guarantees, consider the layers through which audio passes on a typical Linux system:</p>
+        <p>This is the fundamental limit of file-level provenance: it can record who signed a file and what edits were declared, but by the time a file exists, the audio could have come from anywhere.</p>
+
+        <h2>The Physical-Digital Border</h2>
+        <p>To understand how Tycho could provide a different level of guarantees, consider the layers through which audio passes on a typical Linux system:</p>
 
 <div class="diagram">┌─────────────────────────────────────────────────────────────┐
 │  Applications (Audacity, DAWs, Recording Software)         │
@@ -154,26 +164,29 @@
 │  Analog Signal (microphones, instruments)                  │
 └─────────────────────────────────────────────────────────────┘</div>
 
-        <p>Each layer above the hardware represents an opportunity for manipulation. An application-level signature—the approach taken by most existing solutions—leaves every layer below it unattested. A bad actor could inject synthetic audio at the sound server, the library, or anywhere else in the chain, then sign the result with perfect legitimacy. The signature proves only that <em>someone</em> signed <em>something</em>; it says nothing about what actually happened at the microphone.</p>
+        <p>Each layer above the hardware represents an opportunity for manipulation. An application-level signature leaves every layer below it unattested. But the closer we move toward the digital-physical border, the smaller the attack surface. At the driver level, we can hash and sign audio buffers the moment they arrive from the ADC, before any user-space process can touch them. This is what makes hardware-level attestation fundamentally different from file-level signing: the guarantees propagate downstream to every application that consumes the audio, rather than being applied after the fact to data of unknown origin.</p>
 
-        <p>The closer we move Tycho toward the digital-physical border, the smaller the attack surface. At the driver level, we can hash and sign audio buffers the moment they arrive from the ADC, before any userspace process can touch them. This is what makes hardware-level attestation fundamentally different from file-level signing: the guarantees propagate downstream to every application that consumes the audio, rather than being applied after the fact to data of unknown origin.</p>
+        <p>The Tycho protocol provides cryptographic links between phenomena and their measurements, enabling us to answer questions like:</p>
 
-        <h2>The Tycho Questions: What True Provenance Answers</h2>
-        <p>The Tycho protocol provides cryptographic answers to five essential questions about any recording:</p>
         <ul>
             <li><strong>Temporal Anchoring</strong>: When exactly was this captured, anchored to consensus time?</li>
-            <li><strong>Instrument Authenticity</strong>: Which specific, verified device made this recording?</li>
+            <li><strong>Instrument Authenticity</strong>: Which specific device made this recording?</li>
             <li><strong>Sequentiality</strong>: Is the order of audio samples mathematically guaranteed?</li>
             <li><strong>Immutability</strong>: Has any alteration occurred since capture?</li>
             <li><strong>Custody</strong>: Who has handled this data, and when?</li>
         </ul>
 
-        <h2>The Linux Audio Community Shows the Way</h2>
-        <p>The open-source Linux audio community—maintainers of ALSA kernel drivers, the Bela platform, and dozens of open hardware projects—can integrate Tycho at the digital-physical border where analog becomes digital. By hashing and signing audio the moment it leaves the ADC, before any software can touch it, open audio can establish a new standard: recordings that are authentic by design, not by assertion.</p>
+        <p>We have an intuition that the Linux audio community can figure out how to integrate Tycho guarantees at the digital-physical border where analog becomes digital. By hashing and signing audio the moment it leaves the ADC, before any other software can touch it, authentic sound becomes possible.<sup><a href="#fn5" id="ref5">5</a></sup></p>
 
-        <p>Authentic sound is possible.</p>
+        <p>If this is something you'd like to work on with us, please get in touch.</p>
 
-        <p class="footnote">Thank you to the extraordinary audio tools maker Billy Putnam for his advice on this topic.</p>
+        <div class="footnotes">
+            <p id="fn1"><sup>1</sup> For a nuanced account, see: <a href="https://misinforeview.hks.harvard.edu/article/beyond-the-deepfake-hype-ai-democracy-and-the-slovak-case/">Beyond the deepfake hype: AI, democracy, and "the Slovak case."</a> <a href="#ref1">↩</a></p>
+            <p id="fn2"><sup>2</sup> You can listen to the call yourself here: <a href="https://www.nbcnews.com/video/listen-fake-biden-robocall-tells-new-hampshire-not-to-vote-in-primary-202609733664">Fake Biden robocall tells voters to skip New Hampshire primary</a> <a href="#ref2">↩</a></p>
+            <p id="fn3"><sup>3</sup> See the now classic paper by Chesney, Robert, and Danielle Keats Citron, <a href="https://doi.org/10.2139/ssrn.3213954">Deep Fakes: A Looming Challenge for Privacy, Democracy, and National Security</a>. <a href="#ref3">↩</a></p>
+            <p id="fn4"><sup>4</sup> C2PA timestamps rely on the signer's own clock, with no anchor to external consensus time, so backdating is trivial. <a href="#ref4">↩</a></p>
+            <p id="fn5"><sup>5</sup> Thank you to the extraordinary audio tools maker Billy Putnam for his advice on this topic. <a href="#ref5">↩</a></p>
+        </div>
 
         <footer>
             <a href="index.html">← Back to Tycho Protocol</a>
